@@ -1,5 +1,7 @@
 import "../app/globals.css";
 import Navbar from "../Components/NavBar";
+import Footer from "../Components/Footer";
+import Testimonial from "../Components/Testimonial";
 
 export default function RootLayout({ children }) {
   return (
@@ -18,6 +20,8 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Navbar />
+        <Testimonial />
+        <Footer />
         {children}
       </body>
     </html>
