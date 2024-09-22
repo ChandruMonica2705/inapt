@@ -14,6 +14,13 @@
   gap: 0.75rem;
 }
 
+.navbar__logo-img {
+  height: 3.5rem; 
+  object-fit: contain;
+  transform: scale(2.5);
+  transform-origin: center; 
+}
+
 /* Media Query */
 /* Base styles (Desktop) */
 nav {
@@ -48,11 +55,11 @@ nav a {
 }
 
 nav a:hover {
-  color: #3f51b5;
+  color: #0978FE;
 }
 
 button {
-  background-color: #3f51b5;
+  background-color: #0978FE;
   color: white;
   border-radius: 25px;
   padding: 0.6rem 2rem;
@@ -81,32 +88,74 @@ button {
   }
 }
 
+/* Base styles (for desktop and tablet) */
+.hamburger {
+  display: none; /* Hide hamburger by default */
+}
+
+.nav-links {
+  display: flex; /* Show navigation links on larger screens */
+}
+
 /* Media Query for Mobile Phones (600px and below) */
 @media (max-width: 600px) {
   nav {
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
     height: auto;
-    padding: 1rem; /* Reduce padding */
+    position: relative;
   }
 
+  /* Logo on the left */
   nav div:first-child {
-    margin-left: 20px; /* Less margin on small devices */
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
   }
 
-  nav img {
-    height: 2rem; /* Smaller logo */
-    width: 2rem;
+  /* Hamburger in the center */
+  .hamburger {
+    cursor: pointer;
+    font-size: 2rem;
+    flex: 1;
+    display: flex;
+    justify-content: center;
   }
 
-  nav a {
-    font-size: 0.8rem; /* Further reduce font size for links */
-    margin-bottom: 0.5rem; /* Add space between links */
+  /* Contact button on the right */
+  .contact-button {
+    flex: 1;
+    display: flex;
+    justify-content: flex-middle;
+    width: auto; 
+    padding: 0.4rem 2.5rem; 
+    margin-right: 10px; 
+    border-radius: 25px;
+  }
+
+  /* Hide navigation links initially for mobile */
+  .nav-links {
+    display: none; /* Initially hide */
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem; /* Space below the hamburger */
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center; 
+  }
+
+  /* When menu is active, show the links */
+  .nav-links.active {
+    display: flex; /* Show links when active */
   }
 
   button {
-    width: 100%; /* Full width button on mobile */
-    margin-right: 0; /* No margin on small screens */
-    margin-top: 1rem;
+    margin-top: 0;
   }
 }
 
